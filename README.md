@@ -8,3 +8,6 @@ $ chmod +x gcode-edit.php
 
 # Usage
 $ ./gcode-edit.php trim <path/to/gcode/file>
+
+# Example
+![alt text](https://raw.githubusercontent.com/treuliaux/gcode-trimmer/master/examples/trimmed-gcode.jpg)
