@@ -25,6 +25,7 @@ class RestartPrintCommand extends Command
     private $fileStartHeight;
     private $fileLayerHeight;
     private $startLayer;
+    private $resetHeight = false;
     /** @var  SymfonyStyle */
     private $io;
 
@@ -201,6 +202,8 @@ class RestartPrintCommand extends Command
 
     private function askUser()
     {
+        $this->resetHeight = !$this->io->confirm('Is your aborted print still attached to the printer\'s plate ?');
+
         $question = new Question("Select the new starting layer number (0 - {$this->fileLayerCount})");
         $question->setValidator(
             function ($answer) {
